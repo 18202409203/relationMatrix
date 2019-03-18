@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="relationMatrix.js"></script>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="paint()">生成数据并绘制</button>
+    <div id="canvas"></div>
+
+    <script>
+        // test Data
+        function makeArray(length){
+            let result = [];
+            for(let i = 0; i < length; i ++){
+                let array_i = [];
+                for(let j = 0; j < length; j ++){
+                    array_i.push(Math.random() * 2 - 1);
+                }
+                result.push(array_i);
+            }
+            return result;
+        }
+        function makeLabel(length){
+            let result = [];
+            for(let i = 0; i < length; i ++){
+                result.push(Math.random().toString(36).slice(-3));
+            }
+            return result;
+        }
+
+        var options = {
+            margin: { top: 50, right: 50, bottom: 100, left: 100 },
+            data: [],
+            container: "canvas",
+            labels: [],
+            max: {
+                value: 1
+            },
+            min: {
+                value: -1
+            },
+            cellSize: 50,
+            isSymmetry: true
+        }
+
+        function paint(){
+            var num = 10;
+            options.data = makeArray(num);
+            options.labels = makeLabel(num);
+            relationMatrix(options);
+        }
+
+    </script>
+</body>
+
+</html>
