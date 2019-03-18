@@ -1,11 +1,8 @@
 # relationMatrix
 
------------------------------------------------------
-
 <img src="relationMatrix.png">
 
------------------------------------------------------
-
+The file offered a function `relationMatrix` with one parameter `options`, its properities is below:
 使用D3.js编写了`relationMatrix.js`，该文件提供一个函数`relationMatrix`, 函数需要传入一个参数`options`, 默认配置如下：  
 
 ```js
@@ -27,6 +24,7 @@
     }
 ```
 
+After import `relationMatrix.js`, an "HOW TO USE" example is below:
 在自己的页面引入`relationMatrix.js`后，一个调用的例子如下：  
 
 ```js
