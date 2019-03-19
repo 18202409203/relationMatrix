@@ -2,7 +2,9 @@
 
 <img src="relationMatrix.png">
 
-The file offered a function `relationMatrix` with one parameter `options`, its properities is below:  
+The circle's radius and color is both up to the realtion value, you can change the source code to meet your needs.  
+圆圈半径和颜色程度同时刻画了相关性的大小，你也可以自定义。  
+The file offered a function `relationMatrix` with one parameter `options`, its properties is below:  
 使用D3.js编写了`relationMatrix.js`，该文件提供一个函数`relationMatrix`, 函数需要传入一个参数`options`, 默认配置如下：  
 
 ```js
@@ -23,6 +25,9 @@ The file offered a function `relationMatrix` with one parameter `options`, its p
         isSymmetry: true // 是否对称
     }
 ```
+
+**注意：** 这里的是否对称`isSymmetry`是指最大值和最小值是否是以`0`为界，正负对称，这决定圆圈半径的选取方式。例如皮尔逊相关系数在`-1`和`1`之间。*不是指矩阵是否对称，矩阵完全由输入的`data`值决定*。  
+**Note:** The property `isSymmetry` is not for `Symmetric Matrix`, but for "Is the maximum and minimum is bounded by zero, one positive and one negative".As we know, Pearson correlation coefficient (PCC) is between `1` and `-1`.
 
 After import `relationMatrix.js`, a "HOW TO USE" example is below:  
 在自己的页面引入`relationMatrix.js`后，一个调用的例子如下：  
